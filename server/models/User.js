@@ -26,13 +26,13 @@ const userSchema = new mongoose.Schema({
         required:true    
     },
     additionalDetails: {
-        type:mongoose.Schema.Types.ObjectId,//refers to profile model
+        type:mongoose.Schema.Types.ObjectId,
         required:true,
         ref:"Profile",
     },
     courses: [
         {
-            type:mongoose.Schema.Types.ObjectId,//refers to course model
+            type:mongoose.Schema.Types.ObjectId,
             ref:"Course",
         }
     ],
@@ -40,9 +40,15 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true,
     },
+    token :{
+        type:String,
+    },
+    resetPasswordExpires: {
+        type:Date,
+    },
     courseProgress: [
         {
-            type:mongoose.Schema.Types.ObjectId,//refers to courseProgress model
+            type:mongoose.Schema.Types.ObjectId,
             ref:"CourseProgress",
         }
     ],
